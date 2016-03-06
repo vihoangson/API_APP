@@ -16,10 +16,29 @@
 			$(document).ready(function() {
 				$("button").text("button123");
 				$("button").click(function(){
-					$("button").after("<p>Do</p>");
-					$.post('http://banhsusu.com/index.php',{"1":"2","2":{"2":"2412312"}}, function(data) {
-						console.log(JSON.parse(data));
+
+
+
+					$.ajax({
+						url: 'http://banhsusu.com/index.php',
+						contentType: 'application/json',
+						type: 'POST',
+						dataType: 'json',
+						data: {"111":"3332"},
+					})
+					.done(function(data) {
+						console.log(data);
+						$("button").after("<p>Do</p>");
+						console.log("success");
+					})
+					.fail(function() {
+						console.log("error");
+					})
+					.always(function() {
+						console.log("complete");
 					});
+
+					
 				});
 			});
 		</script>
