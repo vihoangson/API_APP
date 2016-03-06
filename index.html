@@ -17,13 +17,16 @@
 		<![endif]-->
 	</head>
 	<body>
-		
+		<hr>
+		<div class="text-center"><button type="button" class="btn btn-info">button</button></div>
 
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script>
-			$.post('http://banhsusu.com/index.php',{"1":"2","2":{"2":"2412312"}}, function(data) {
-				console.log(JSON.parse(data));
+			$("button").click(function(){
+				$.post('http://banhsusu.com/index.php',{"1":"2","2":{"2":"2412312"}}, function(data) {
+					console.log(JSON.parse(data));
+				});
 			});
 		</script>
 		<!-- Bootstrap JavaScript -->
