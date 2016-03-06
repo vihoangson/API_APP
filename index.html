@@ -13,9 +13,13 @@
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 		<script>
-			$("button").click(function(){
-				$.post('http://banhsusu.com/index.php',{"1":"2","2":{"2":"2412312"}}, function(data) {
-					console.log(JSON.parse(data));
+			$(document).ready(function() {
+				$("button").text("button123");
+				$("button").click(function(){
+					$("button").after("<p>Do</p>");
+					$.post('http://banhsusu.com/index.php',{"1":"2","2":{"2":"2412312"}}, function(data) {
+						console.log(JSON.parse(data));
+					});
 				});
 			});
 		</script>
