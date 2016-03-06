@@ -15,7 +15,7 @@
 		<script>
 			$(document).ready(function() {
 				$("button").text("button123");
-				$("button").click(function(){
+				$("button2").click(function(){
 
 
 
@@ -38,7 +38,21 @@
 						console.log("complete");
 					});
 
-					
+				});
+
+				$("button").click(function(){
+					$.ajax({
+						type: "POST",
+						url: "http://banhsusu.com/index.php",
+						dataType: "json",
+						data: {identity: "111", password: "222"},
+						success: function(data) {
+							$("button").after("<p>Do</p>");
+						},
+						error: function(e) {
+							alert('Error: ' + e.message);
+						}
+					});
 				});
 			});
 		</script>
